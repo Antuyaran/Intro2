@@ -225,11 +225,90 @@
             overflow-wrap: break-word;
         }
 
+    
+        /* =========================================
+           === Updated Text Modules ===
+           左侧为主文本，右侧为辅助文本。
+           数字序号通过 data-section 存在于代码中，但不会显示在页面中。
+           ========================================= */
+        #text-module-1 {
+            font-family: "PingFang SC", "PingFangSC-Regular", "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 30pt;
+            line-height: 1.08;
+            color: #5e5e5e;
+        }
+
+        #text-module-2 {
+            font-family: "PingFang SC", "PingFangSC-Regular", "Helvetica Neue", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 20pt;
+            line-height: 1.12;
+            color: #b7b7b7;
+        }
+
+        #text-module-1 p,
+        #text-module-2 p {
+            font-family: inherit;
+            font-weight: 400;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .main-paragraph {
+            scroll-margin-top: 0;
+        }
+
+        .side-section {
+            margin: 0 0 2em 0;
+            scroll-margin-top: 0;
+        }
+
+        .image-pair {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin: 0.8em 0 1.4em 0;
+            width: 100%;
+        }
+
+        .image-pair img {
+            display: block;
+            width: calc((100vw - (var(--page-margin) * 2)) / 12 * 2);
+            max-width: calc((100% - 20px) / 2);
+            height: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            #text-module-1 {
+                font-size: 18pt;
+                line-height: 1.12;
+            }
+
+            #text-module-2 {
+                font-size: 12pt;
+                line-height: 1.16;
+            }
+
+            .image-pair {
+                gap: 10px;
+            }
+
+            .image-pair img {
+                width: calc((100vw - (var(--page-margin) * 2)) / 12 * 2);
+                max-width: calc((100% - 10px) / 2);
+            }
+        }
+
     </style>
 </head>
 <body>
     <section id="header-layer">
-<a class="header-text header-link" id="header-proj" href="https://antuyaran.github.io/homepage/">Project Name</a>
+<a class="header-text header-link" id="header-proj" href="https://antuyaran.github.io/homepage/">The Unquiet Page</a>
 <div class="header-text current" id="header-intro">Intro</div>
 <a class="header-text header-link" id="header-work" href="https://antuyaran.github.io/workprocess/">Working Process</a>
 
@@ -244,51 +323,77 @@
             <div id="content-grid">
                 <article id="text-module-1">
 
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed nonummy luminara vestibus ordinarie fluens, in qua verba quasi mollia signa per paginam procedunt. Nulla facilisi. Praesent alique moderata, felis in tempor velum, nunc erat cursus sapien, vitae blandit lorem neque at arcu. Morbi sed ipsum vitae magna dictum varius, sed porta ligula elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer vel mauris non urna sollicitudin faucibus. Donec pretium, lacus at imperdiet tincidunt, neque ante aliquet sem, vitae convallis odio neque nec justo.</p>
-<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris laoreet, purus id fermentum varius, lectus erat mollis est, sed vehicula justo magna non sapien. Curabitur aliquam blandit lacus, in placerat erat porttitor sed. Aenean at neque vitae risus sodales volutpat. Suspendisse potenti. Etiam pulvinar, quam at laoreet pretium, tortor nibh cursus sem, et faucibus magna ipsum sed velit. Aliquam erat volutpat. Sed tempor, nisi in dictum aliquet, turpis leo interdum magna, sed facilisis neque sapien ac justo.</p>
-<p>Nunc viverra, sem vel pharetra cursus, ligula sapien cursus orci, at finibus lorem purus ac massa. Cras gravida sapien sed tellus pretium, a facilisis arcu ornare. Proin vel diam sit amet lectus dictum tincidunt. Integer porttitor nunc vitae metus suscipit, ac vestibulum felis volutpat. Duis vel ipsum non dolor feugiat malesuada. Sed a magna in erat pretium eleifend. Morbi vel arcu vitae nibh iaculis tempor. Quisque sed nibh in risus malesuada elementum. In hac habitasse platea dictumst. Nullam vitae lorem sit amet ipsum lacinia tempor.</p>
-<p>Phasellus ornare, justo sed vestibulum porta, neque magna ultricies erat, vel dignissim tellus sapien id nisl. Vivamus rhoncus sem a lectus gravida, nec blandit dolor volutpat. Nam at lectus vitae lacus blandit luctus. Integer nec lorem eu turpis commodo eleifend. Sed lacinia nisl vel lorem congue, id imperdiet justo cursus. Donec tincidunt eros at lacus vehicula, ut pulvinar neque accumsan. Aenean vitae ligula vitae erat gravida luctus. Mauris vitae nulla vitae eros dignissim venenatis.</p>
-<p>Quisque vel ante a magna blandit tristique. Fusce tempor, augue nec luctus faucibus, velit sapien efficitur libero, sed condimentum lectus neque et mi. Praesent viverra erat nec velit ultrices, sed molestie sapien vulputate. Etiam non arcu non ipsum gravida lacinia. Curabitur at risus ac tortor fermentum mattis. Sed id velit in purus luctus tempor. Integer vitae enim a turpis sodales venenatis. Nunc bibendum, libero at egestas convallis, lorem mi facilisis justo, eget accumsan massa sem nec nibh.</p>
-<p>Aenean consequat, neque quis tristique dictum, mauris erat interdum lacus, sit amet tempus purus felis in sapien. Ut dictum lacus vitae sem porttitor, sed fermentum ligula viverra. Morbi non eros at ligula cursus tristique. In sed sapien euismod, pretium augue sed, imperdiet nulla. Suspendisse in magna eu sem bibendum eleifend. Aliquam feugiat magna vitae felis sagittis, vel tristique erat sagittis. Donec a ligula sed velit cursus vestibulum. Nam suscipit purus in lorem efficitur, vel egestas justo congue.</p>
-<p>Sed imperdiet dolor in eros malesuada, vitae eleifend arcu luctus. Donec non lorem vitae neque placerat convallis. Pellentesque mattis metus sed erat vulputate, nec porta nisi tempor. Integer euismod, turpis a bibendum fringilla, nunc libero rhoncus lacus, sed sodales lacus nunc vitae arcu. Cras maximus dui eu tortor gravida, vel faucibus ipsum pulvinar. Nulla sit amet erat sed mauris imperdiet cursus. Fusce sed lectus et risus imperdiet ornare. Mauris sed erat ac sapien facilisis condimentum.</p>
-<p>Lorem veloria natis, ipsum calendero, sed amet fragilis in ordine tacito dispositum. Praesent mollis neque non lectus cursus, vitae porttitor sapien laoreet. Donec congue arcu nec mi viverra, in vehicula sem luctus. Integer dignissim, mi in tempor varius, enim nisl pretium justo, at malesuada lacus lectus vel augue. Sed aliquam quam vel sapien tincidunt, non varius urna convallis. Vestibulum ante mauris, faucibus non luctus sit amet, blandit non purus. Curabitur sagittis massa id augue finibus, non sodales justo luctus.</p>
-<p>Nulla facilisi. Nam dictum lectus ut orci malesuada, ac pharetra justo blandit. Vestibulum in risus sed nulla accumsan interdum. Aenean tristique neque vel lectus luctus, sed dignissim metus ultricies. Etiam consequat, ipsum sed feugiat finibus, sem eros dignissim lectus, nec faucibus felis nulla non orci. Duis tincidunt mauris sit amet justo porttitor, sed faucibus ante eleifend. Integer porta, leo vel viverra efficitur, odio tortor cursus lorem, ac convallis nisl ipsum sed felis.</p>
-<p>Mauris lacinia, turpis vel tempor porttitor, neque est commodo nisi, id gravida purus felis at lacus. Sed eu massa sed lorem elementum pretium. Phasellus sit amet augue nec tortor bibendum varius. Donec viverra risus sed massa convallis, vitae mattis sapien hendrerit. Integer ut libero eget sem sodales tristique. Cras mollis odio sed lorem ultrices, at tempor velit aliquam. Pellentesque nec ipsum eget justo commodo vestibulum. In eget neque ac erat molestie convallis.</p>
-<p>Vivamus fermentum justo eu diam elementum, nec vehicula ipsum cursus. Sed vehicula mauris nec eros dictum, non malesuada nisl venenatis. Morbi vitae sapien et lacus feugiat luctus. Donec maximus eros vel mauris ornare, id gravida neque facilisis. Pellentesque gravida leo et sapien rhoncus, in dignissim mi tempor. Nullam posuere ipsum vel tortor scelerisque, vel cursus sem sodales. Aenean at mi non tortor auctor pulvinar. Etiam nec massa sed justo luctus interdum.</p>
-<p>Integer a lorem a neque fermentum iaculis. Sed vestibulum, mauris sed ornare blandit, mi erat malesuada risus, vitae tempus mi lectus nec eros. Curabitur ut augue id mauris congue consequat. Nam ut enim nec neque congue commodo. Praesent laoreet libero sed diam scelerisque, vel egestas velit fringilla. Cras euismod arcu id odio ullamcorper, sit amet volutpat ipsum viverra. Pellentesque sed sapien non magna dictum aliquam. Maecenas non velit in metus elementum consequat.</p>
-<p>Donec ultricies, arcu at imperdiet tempor, urna arcu hendrerit nisl, nec sodales massa nisi nec elit. Vivamus sed leo a sapien luctus scelerisque. Fusce tempor sapien vel urna facilisis, eget egestas erat pretium. Nam aliquam, leo et sagittis tincidunt, lorem nisi tristique orci, sit amet eleifend dolor mi vitae nulla. Sed non risus ut magna ultrices malesuada. Vestibulum id lorem vitae nulla vehicula tempus. Cras imperdiet eros sit amet lorem facilisis, nec elementum tortor luctus.</p>
-<p>Aliquam porttitor, nulla sit amet dictum vulputate, eros massa vestibulum neque, eget dictum massa lacus et sem. Morbi vehicula, neque at hendrerit pulvinar, erat erat venenatis lorem, vitae dignissim lorem eros sed arcu. Phasellus feugiat nisl sit amet nisi malesuada, a consequat lectus sollicitudin. Nulla aliquam sed turpis nec dictum. Donec vel mauris sed justo convallis sodales. Integer feugiat, nibh sit amet auctor efficitur, augue lectus cursus metus, vitae interdum lacus justo at augue.</p>
-<p>Curabitur vel risus vitae massa tincidunt faucibus. Donec non justo nec justo iaculis imperdiet. Praesent dignissim, lacus nec facilisis aliquet, neque purus suscipit sapien, vitae accumsan sem risus nec velit. Integer commodo tellus nec turpis porttitor, eget vehicula massa venenatis. Mauris vitae eros at diam sollicitudin auctor. Pellentesque congue sem eget lacus pulvinar, non gravida magna dapibus. Aenean suscipit nibh et lacus pharetra, nec varius odio gravida.</p>
-<p>In tempor lorem id neque cursus, sit amet venenatis lacus pulvinar. Cras porttitor ipsum nec nisi vulputate, non posuere ligula fermentum. Nam pulvinar ipsum eget arcu porttitor, eget interdum risus tempor. Duis ac leo vitae mauris finibus efficitur. Etiam laoreet, orci sed porta luctus, enim lectus condimentum odio, sit amet consequat massa lectus in elit. Suspendisse ut turpis nec velit scelerisque hendrerit. Morbi facilisis ex vitae ante pretium, ut faucibus est posuere.</p>
-<p>Lorem ipsum dolor sit amet, sed transia veloribus in margine longo fluere videtur, quasi pagina ipsa respirat inter lineas. Aenean consequat tortor a eros finibus, et aliquet lectus facilisis. Sed ultricies lorem sit amet sapien suscipit, vitae vulputate magna dictum. Vivamus vitae lorem at augue elementum vestibulum. Curabitur a nulla sed arcu iaculis tempus. Donec eget lectus vel lorem cursus convallis. Integer in nunc eu enim placerat ullamcorper. Sed et turpis at mauris feugiat gravida.</p>
-<p>Proin sollicitudin, magna at tempor aliquet, nulla purus mattis lorem, id ultricies erat massa quis sapien. Fusce sit amet lectus non purus aliquam aliquet. Morbi pulvinar libero nec velit efficitur, sed cursus eros aliquet. Donec at lorem vitae erat faucibus sodales. Integer varius augue ut lacus dignissim, vitae commodo nunc tincidunt. Sed dictum eros nec lorem viverra, non molestie lectus tincidunt. Praesent euismod tortor nec massa mattis, id finibus nibh convallis.</p>
-<p>Sed blandit magna vitae sapien eleifend, vitae suscipit ipsum malesuada. Duis ornare, urna sed finibus feugiat, erat neque vulputate metus, non luctus neque lectus non eros. Nullam ut neque vitae sem facilisis dictum. Curabitur id magna nec libero dictum tempor. Pellentesque a arcu sed velit ullamcorper laoreet. Aenean ac lorem vel odio mattis aliquet. Morbi commodo erat id tellus tristique, at viverra nisl sagittis.</p>
-<p>Nunc cursus enim vitae diam dignissim, ut volutpat magna porttitor. Praesent quis felis nec ipsum suscipit luctus. Etiam dictum elit non sem blandit, vel condimentum ipsum ullamcorper. Nulla pretium sapien nec neque porttitor, vitae facilisis arcu tincidunt. Donec et elit quis justo tincidunt faucibus. Vivamus luctus eros sed leo bibendum, vel mollis tellus pretium. Cras sagittis felis sed libero porta, in efficitur dui gravida.</p>
+
+<p class="main-paragraph" data-section="1">The Unquiet Page is a visual and interactive experiment about screen-based reading spaces.</p>
+<p class="main-paragraph" data-section="2">This project comes from an everyday experience: in the digital media we encounter most frequently, text often does not have a space that fully belongs to itself. It is surrounded by advertisements, pushed by recommendation modules, and constantly interrupted by comments, highlights, navigation bars and other interface elements. Digital media seems to cut my reading experience into fragments.</p>
+<p class="main-paragraph" data-section="3">Whether this happens intentionally or unintentionally, once I became aware of it, I noticed that when reading long-form texts, I often only read the first sentence of each paragraph.</p>
+<p class="main-paragraph" data-section="4">This experience is often easily attributed to a failure of personal self-control. The reader seems to become a kind of ascetic figure, struggling to protect their attention against entertainment, streaming media and endless information feeds. They either succeed in finishing a long text, or fail and jump to the next, and then the next, source of stimulation.</p>
+<p class="main-paragraph" data-section="5">However, in this project, I do not understand distracted attention in screen reading as a failure of individual concentration. Instead, I see it as a structural reading condition shaped by the media environment. Notifications, advertisements, recommendation modules, toolbars and linking mechanisms all enter the textual space, changing the continuity, rhythm and distribution of attention in reading.</p>
+<p class="main-paragraph" data-section="6">I chose web-based reading as my site of analysis. On news websites, magazine websites and information platforms, the main body text rarely exists independently. It often appears together with advertisements, sponsored content, recommendation modules, navigation bars, login buttons and other interface elements. These elements do not simply sit around the text. They also participate in deciding how the text is seen, blocked, compressed and interrupted.</p>
+<p class="main-paragraph" data-section="7">As a research method, I took screenshots of reading pages from websites such as BBC News, Politico, Daily Mail and Nautilus, and abstracted different information areas within these pages into graphic markings. Yellow represents advertisements, sponsored spaces and external information modules, while grey represents the main reading area. Through this method, I tried to observe the proportion and relationship between “text space” and “platform space” within digital reading pages.</p>
+<p class="main-paragraph" data-section="8">I then reapplied these graphic structures, extracted from real webpages, to my own project introduction text. They cover the body text, compress the reading space and cut through the reading path. While reading this text, you may also be experiencing a frustrating condition of screen-based reading. In this space, graphic forms of different shapes overlap, subtract from one another and recombine, creating new interrupted layouts. The graphics that were originally used to analyse webpage structures become the active force that affects reading.</p>
+<p class="main-paragraph" data-section="9">This project is not simply a critique of advertising or information overload. Instead, it uses graphic design methods to reveal a media condition: screen reading does not take place in a closed, quiet space that belongs only to text, but within an open media environment. Therefore, attention, textual space and reading continuity in screen reading are not naturally stable. They are often shaped by page structures, platform logics and interface controls, forming a dynamic relationship with our reading experience.</p>
+
 
                 </article>
 
                 <article id="text-module-2">
 
-<p>Ut euismod arcu non lorem gravida, non rhoncus libero vestibulum. Pellentesque ac nisl id sapien dictum dignissim. Maecenas tempor enim sit amet metus sodales, eget dictum tortor cursus. Suspendisse sed lacus vitae risus porta sagittis. Vivamus nec lorem vel sapien aliquam congue. Sed cursus nulla vel leo pretium, quis bibendum libero gravida. Integer malesuada sapien a felis fermentum, vitae tempor nisi ultricies.</p>
-<p>Morbi commodo lorem at ipsum posuere, vitae commodo ligula viverra. Suspendisse laoreet, erat at suscipit suscipit, magna ipsum facilisis nibh, eget tincidunt erat nisl eget libero. Nam eget nulla vitae mauris ullamcorper gravida. Integer vitae eros vel nisi tristique porta. Donec tempor neque non augue ornare, sed convallis sem tristique. Etiam vehicula urna ac augue sagittis, non venenatis sem luctus. Sed pretium mi sed dolor finibus, sit amet efficitur lorem congue.</p>
-<p>Phasellus egestas, magna non volutpat blandit, sem purus facilisis augue, non fermentum elit libero vitae nibh. Cras bibendum urna sed elit imperdiet, vitae sagittis arcu tristique. Curabitur elementum felis in lorem interdum, at pretium lorem volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam tincidunt erat sed felis tempor, in luctus orci cursus. Vestibulum nec massa a arcu tincidunt sollicitudin.</p>
-<p>Lorem ipsum dolor sit amet, inventa paginae, mollis figura, textus sine causa sed cum ordine visibili. Vestibulum semper ipsum vel sapien aliquet, at elementum neque cursus. Duis vitae metus sed leo facilisis dignissim. Nam sit amet eros nec orci molestie sodales. Donec pretium nulla at justo fermentum, vel fringilla massa luctus. Curabitur dictum mauris vitae quam ullamcorper, at scelerisque nibh auctor. Praesent pulvinar magna vitae nibh varius, vel tempor neque hendrerit.</p>
-<p>Sed ornare, elit at tempus porttitor, quam risus vehicula urna, a dignissim elit lorem quis massa. Integer sed arcu vitae lectus porttitor ultrices. Morbi convallis eros in risus pretium, non elementum risus gravida. Nulla eu neque vitae nulla feugiat tempus. Donec maximus justo vitae dolor aliquam, nec volutpat ipsum auctor. Vivamus ullamcorper enim vitae risus viverra, at dignissim risus dapibus. Duis cursus metus sit amet metus rhoncus, quis eleifend lectus venenatis.</p>
-<p>Aenean eu tortor in lorem volutpat vestibulum. Proin accumsan, lectus sed cursus luctus, sapien elit dictum erat, id interdum tortor massa vitae velit. Donec fermentum massa nec tortor feugiat, vitae blandit lacus commodo. Integer ac massa at mauris porta blandit. Morbi ac justo non sem cursus pretium. Sed luctus, lorem at interdum porta, nunc sapien efficitur lorem, vitae tincidunt erat nibh nec sem. Nulla vel orci sed lectus posuere eleifend.</p>
-<p>Vestibulum consequat odio nec nibh lacinia, nec consequat felis iaculis. Sed sed leo in arcu tincidunt tincidunt. Pellentesque vitae lacus vel neque vehicula varius. Curabitur quis nulla nec sem posuere porta. Integer at eros nec mi tempor tincidunt. Donec dignissim quam eget neque viverra, nec posuere sem facilisis. Aenean nec augue ut erat molestie blandit. Suspendisse rhoncus, arcu vitae tempor commodo, lectus mi pharetra nisl, et posuere lorem arcu non lacus.</p>
-<p>Etiam pharetra libero eget sem imperdiet, at cursus felis malesuada. Donec feugiat lorem at dolor ullamcorper, vitae accumsan orci tincidunt. Mauris non lorem vitae tellus gravida ullamcorper. Nam porttitor neque vitae massa luctus, quis malesuada erat tristique. Integer vitae sapien sed ipsum porttitor maximus. Cras posuere turpis ac lorem cursus, vel dignissim sem blandit. Sed sed neque sed nisi lacinia facilisis. In hac habitasse platea dictumst.</p>
-<p>Aliquam erat volutpat. Integer sed justo sed metus ullamcorper placerat. Phasellus molestie, magna nec faucibus vehicula, odio tellus imperdiet nisi, vitae pharetra sapien mi vitae velit. Nullam sit amet massa a ipsum vulputate cursus. Pellentesque vel leo faucibus, finibus massa in, volutpat neque. Donec pulvinar dolor nec nunc pulvinar, id pharetra sem dignissim. Sed consequat ipsum at mauris pretium, nec blandit neque iaculis.</p>
-<p>Proin auctor, lorem vitae pulvinar imperdiet, ligula neque pulvinar mi, sed congue mi arcu sed metus. Sed fermentum lacus in tortor laoreet, nec aliquam ipsum pharetra. Praesent sit amet massa vitae lorem pretium consequat. Donec ultrices dolor id arcu pulvinar, sed feugiat risus pharetra. Integer aliquet purus sed sem aliquet, et rhoncus lorem tristique. Fusce porta felis vitae quam commodo, vitae pellentesque tellus accumsan.</p>
-<p>Donec quis augue id neque gravida bibendum. Nullam consequat, odio sed volutpat imperdiet, ipsum metus feugiat libero, nec pulvinar neque nulla sed lorem. Curabitur nec elit nec sem tempor porttitor. Maecenas pharetra neque id leo gravida, vel maximus ligula sodales. Vivamus varius dolor et massa tempor, sed sodales tortor fringilla. Integer sit amet ligula in lorem mattis laoreet. Sed ac augue non nibh tristique luctus. Fusce fermentum lacus et lorem tempor, ac pulvinar massa sollicitudin.</p>
-<p>Nunc vitae mi quis felis viverra vestibulum. Morbi finibus magna et lacus molestie, nec facilisis erat cursus. Integer tristique lorem non arcu dictum, sed auctor mi sagittis. Cras malesuada, neque sed blandit commodo, velit ipsum vulputate neque, id imperdiet purus justo non lorem. Pellentesque et lectus nec arcu porta volutpat. Vestibulum vitae erat ac purus consequat elementum. Suspendisse finibus nunc quis lorem tincidunt, vitae cursus mi efficitur.</p>
-<p>Lorem ipsum dolor sit amet, textoria plana, pagina extensa, verba sine memoria sed cum habitu lectionis ordinata. Aenean sed massa et arcu lacinia pretium. Donec a lectus nec neque efficitur pharetra. Fusce porttitor eros sed massa volutpat, eget auctor eros facilisis. Curabitur id augue nec erat sagittis sollicitudin. Sed ut ligula et ipsum gravida laoreet. Integer porta magna sed tellus malesuada, vitae vestibulum turpis pulvinar. Donec feugiat sem in lectus dictum, at fermentum urna porttitor.</p>
-<p>Vestibulum ut sem ac lorem cursus maximus. Mauris at turpis ac sapien hendrerit pretium. Nam ut neque vitae ipsum dignissim faucibus. Sed elementum sem id sapien gravida, et sodales est tincidunt. Duis porta ligula non diam blandit, a aliquet mauris volutpat. Cras id velit vitae ipsum dignissim ullamcorper. Pellentesque dictum, lacus id mattis cursus, purus sem blandit sem, nec tempor augue libero sit amet ipsum.</p>
-<p>Integer a sapien sit amet justo scelerisque faucibus. Donec vel sapien at lorem porta dictum. Etiam euismod nibh sed turpis hendrerit, non vehicula nisl luctus. Suspendisse vulputate magna ut nisi facilisis, at accumsan justo fringilla. Praesent at justo quis enim luctus tincidunt. Sed rhoncus, lacus in sodales cursus, mi sapien congue velit, vel suscipit massa justo nec massa. Donec mattis tellus sed nisi aliquet, at dignissim eros suscipit.</p>
-<p>Cras elementum orci in lacus vehicula, non cursus dolor rhoncus. Vivamus in lorem vitae metus finibus sollicitudin. Fusce posuere nisl vitae leo egestas, nec venenatis justo scelerisque. Integer dictum ipsum et tortor facilisis, at bibendum magna convallis. Donec id eros non sapien cursus porta. Etiam sagittis velit in massa luctus, sed efficitur arcu vehicula. Nulla facilisi. Sed malesuada magna ut justo tempor, sed aliquet erat ornare.</p>
-<p>Nam luctus erat sed eros ornare, sit amet porta purus fermentum. Mauris vitae orci id tortor mattis pulvinar. Donec tempor massa et magna hendrerit, ac aliquet ipsum rhoncus. Proin vitae dolor sed sapien pellentesque viverra. Sed vel erat vel lacus consequat tristique. Pellentesque ac leo in lectus maximus congue. Vestibulum vulputate enim non mi aliquet, ac tempor eros facilisis. Integer porttitor mauris quis lectus bibendum, at feugiat magna viverra.</p>
-<p>Sed at neque id magna sodales rhoncus. Aenean vestibulum massa vel neque vehicula, nec malesuada turpis commodo. Curabitur vitae eros in lectus volutpat accumsan. Donec id tortor at magna consequat aliquam. Integer euismod, sapien at laoreet interdum, neque neque gravida libero, vitae dictum nibh purus sit amet nulla. Nullam blandit ipsum et mauris eleifend, nec finibus dolor dictum. Donec posuere elit vitae diam ullamcorper, et blandit neque eleifend.</p>
-<p>Maecenas pretium, lorem sit amet gravida sodales, lectus justo faucibus sem, nec aliquet augue est at lorem. Etiam dictum risus ac eros laoreet, quis faucibus nisl aliquam. Integer vitae magna eget felis mattis porttitor. Fusce id lectus ut magna feugiat tristique. Vestibulum sit amet sem et lorem blandit cursus. Donec sollicitudin ipsum eu dolor porta, eget vestibulum nulla gravida. Phasellus sed libero nec quam sagittis imperdiet.</p>
-<p>Lorem ipsum finitur sine sententia manifesta, sed continet pondus formae, spatium paragraphi, pulsum lineae, et silentium inter verba. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ut mauris vel leo elementum faucibus. Donec blandit arcu quis sapien molestie, non pretium leo tristique. Praesent porta ipsum eget massa posuere, id cursus risus pulvinar. Morbi eu lectus in massa lacinia vestibulum.</p>
+
+<section class="side-section" data-section="1">
+    <!-- RIGHT TEXT REPLACEMENT AREA 1 START -->
+    <p>What do I mean by screen reading?</p>
+
+    <p>In <em>Words Onscreen: The Fate of Reading in a Digital World</em>, Naomi S. Baron defines her object of study as prose reading with a certain degree of continuity and linear weight, rather than extremely short texts such as road signs, advertisements or text messages. Screen reading is also not limited to e-book reading. It includes many forms of reading that take place on screens, such as news articles, social media updates, film reviews, blogs and academic articles.</p>
+
+    <p>Here, I would also like to use the term screen reading to refer broadly to reading that happens on screens. This includes digital versions of printed books, such as PDFs, EPUBs and HTML conversions, as well as digitally native books: texts originally designed for digital environments, which may involve videos, rotating images, hyperlinks and other technical conditions. In this project, these different forms of reading are all understood as part of screen reading.</p>
+    <!-- RIGHT TEXT REPLACEMENT AREA 1 END -->
+</section>
+
+<section class="side-section" data-section="4">
+    <!-- RIGHT TEXT REPLACEMENT AREA 4 START -->
+    <p>In books about e-book reading and neuroscience, I have encountered several interesting arguments. Some authors suggest that screen reading did not suddenly invent reading habits such as skimming and scanning. Before the digital age, forms such as abridged editions, anthologies and summaries had already existed for a long time. In other words, shorter texts and compressed reading are not unique to the digital era. It may be more accurate to say that digital media has intensified or popularised existing tendencies towards short-form reading and non-linear reading. I imagine this can also be understood as a reading strategy for responding to the age of information overload. After all, within this small screen, there are so many texts waiting for me to see, process and understand.</p>
+
+    <p>At the same time, in <em>Reader, Come Home: The Reading Brain in a Digital World</em>, Maryanne Wolf argues that the reading circuit is shaped by three factors: what we read, how we read, and how we are taught to read. “How we read” includes the medium itself, such as print or screen. In this sense, different media can strengthen different cognitive processes. Repeated reading experiences may gradually train our behaviours and even our physiological patterns over time.</p>
+
+    <p>Therefore, during the making of this project, I understand it more as a form of visual expression: an expression of our already-fragmented attention, an expression of today’s reading experience, and also a speculation on where these experiences of screen reading may eventually lead us.</p>
+    <!-- RIGHT TEXT REPLACEMENT AREA 4 END -->
+</section>
+
+<section class="side-section" data-section="8">
+    <!-- RIGHT TEXT REPLACEMENT AREA 8 START -->
+    <p>Method 1:</p>
+    <p>Extract advertising areas from real webpages and abstract them into colour blocks. These blocks appear randomly and cover the body text, emphasising the visual weight of information that may normally be integrated into the structure of a webpage.</p>
+
+    <!-- METHOD 1 IMAGE REPLACEMENT AREA START: replace src with your own image paths -->
+    <div class="image-pair">
+        <img src="images/method1__-1.jpg" alt="Method 1 image 1">
+        <img src="images/method1__-2.jpg" alt="Method 1 image 2">
+    </div>
+    <!-- METHOD 1 IMAGE REPLACEMENT AREA END -->
+
+    <p>Method 2:</p>
+    <p>Use edge placeholders that continuously expand and contract, compressing the reading space. This method comes from observing the different proportions of advertising across webpages. Some webpages contain almost no advertising, while on others, advertisements occupy a large amount of space and appear in various visual forms.</p>
+
+    <!-- METHOD 2 IMAGE REPLACEMENT AREA START: replace src with your own image paths -->
+    <div class="image-pair">
+        <img src="images/method2__-1.jpg" alt="Method 2 image 1">
+        <img src="images/method2__-2.jpg" alt="Method 2 image 2">
+    </div>
+    <!-- METHOD 2 IMAGE REPLACEMENT AREA END -->
+
+    <p>Method 3:</p>
+    <p>Abstract advertising modules into lines. This method develops further from Method 1. I treat the colour blocks as graphic forms made up of horizontal and vertical lines, then separate and recombine these lines. Through this process, I experiment with a reading experience that is difficult to follow as linear text. Instead, the reader has to move through, skip across, or return within the text.</p>
+
+    <!-- METHOD 3 IMAGE REPLACEMENT AREA START: replace src with your own image paths -->
+    <div class="image-pair">
+        <img src="images/method3__-1.jpg" alt="Method 3 image 1">
+        <img src="images/method3__-2.jpg" alt="Method 3 image 2">
+    </div>
+    <!-- METHOD 3 IMAGE REPLACEMENT AREA END -->
+    <!-- RIGHT TEXT REPLACEMENT AREA 8 END -->
+</section>
+
 
                 </article>
             </div>
@@ -365,6 +470,51 @@
         }
 
         requestAnimationFrame(update);
+
+
+        /* =========================================
+           === Main Text / Side Text Sync ===
+           左侧主文本滚动时，右侧辅助文本跳转到相同 data-section 的内容。
+           右侧辅助文本单独滚动时，不影响左侧。
+           ========================================= */
+        const mainTextModule = document.getElementById('text-module-1');
+        const sideTextModule = document.getElementById('text-module-2');
+        const mainSections = Array.from(mainTextModule.querySelectorAll('[data-section]'));
+        const sideSections = new Map(
+            Array.from(sideTextModule.querySelectorAll('[data-section]')).map(section => [
+                section.dataset.section,
+                section
+            ])
+        );
+
+        let activeSyncedSection = null;
+
+        function syncSideTextToMainText() {
+            const moduleTop = mainTextModule.getBoundingClientRect().top;
+            let currentSection = mainSections[0];
+
+            mainSections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop <= moduleTop + 8) {
+                    currentSection = section;
+                }
+            });
+
+            const sectionNumber = currentSection.dataset.section;
+
+            if (sectionNumber !== activeSyncedSection && sideSections.has(sectionNumber)) {
+                activeSyncedSection = sectionNumber;
+                const target = sideSections.get(sectionNumber);
+                sideTextModule.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'auto'
+                });
+            }
+        }
+
+        mainTextModule.addEventListener('scroll', syncSideTextToMainText);
+        syncSideTextToMainText();
+
     </script>
 
 </body>
