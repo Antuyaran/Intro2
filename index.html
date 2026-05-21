@@ -476,6 +476,10 @@
            === Main Text / Side Text Sync ===
            左侧主文本滚动时，右侧辅助文本跳转到相同 data-section 的内容。
            右侧辅助文本单独滚动时，不影响左侧。
+
+           这版不再直接使用 target.offsetTop。
+           先用 getBoundingClientRect() 计算目标在滚动容器中的真实视觉位置，
+           再减去一个安全顶部距离，避免文字被模块上边缘切掉。
            ========================================= */
         const mainTextModule = document.getElementById('text-module-1');
         const sideTextModule = document.getElementById('text-module-2');
@@ -487,32 +491,64 @@
             ])
         );
 
+        // 当左侧段落距离文本框顶部约 3px 时，就提前触发右侧同步。
+        const SYNC_TRIGGER_OFFSET = 3;
+
+        // 右侧同步后，目标文本距离右侧文本框顶部保留 28px 安全空间，
+        // 避免第一行或前两行文字被 overflow 边缘裁切。
+        const SYNC_SAFE_TOP_GAP = 28;
+
         let activeSyncedSection = null;
 
+        function getScrollTopForTarget(container, target, safeTopGap) {
+            const containerRect = container.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+
+            // 目标当前视觉位置 + 容器当前滚动量 = 目标在容器内容流中的真实位置
+            const targetTopInScrollContent =
+                targetRect.top - containerRect.top + container.scrollTop;
+
+            return Math.max(0, targetTopInScrollContent - safeTopGap);
+        }
+
         function syncSideTextToMainText() {
-            const moduleTop = mainTextModule.getBoundingClientRect().top;
+            const mainModuleTop = mainTextModule.getBoundingClientRect().top;
+            const activationLine =
+                mainModuleTop + SYNC_SAFE_TOP_GAP + SYNC_TRIGGER_OFFSET;
+
             let currentSection = mainSections[0];
 
-            mainSections.forEach(section => {
+            for (const section of mainSections) {
                 const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop <= moduleTop + 8) {
+
+                // 提前一点响应，不等到段落第一行被顶到边缘后才同步。
+                if (sectionTop <= activationLine) {
                     currentSection = section;
+                } else {
+                    break;
                 }
-            });
+            }
 
             const sectionNumber = currentSection.dataset.section;
 
             if (sectionNumber !== activeSyncedSection && sideSections.has(sectionNumber)) {
                 activeSyncedSection = sectionNumber;
                 const target = sideSections.get(sectionNumber);
+                const newScrollTop = getScrollTopForTarget(
+                    sideTextModule,
+                    target,
+                    SYNC_SAFE_TOP_GAP
+                );
+
                 sideTextModule.scrollTo({
-                    top: target.offsetTop,
+                    top: newScrollTop,
                     behavior: 'auto'
                 });
             }
         }
 
         mainTextModule.addEventListener('scroll', syncSideTextToMainText);
+        window.addEventListener('resize', syncSideTextToMainText);
         syncSideTextToMainText();
 
     </script>
