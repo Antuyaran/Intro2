@@ -104,6 +104,56 @@
         #header-intro { grid-column: 7 / 8; grid-row: 1; color: #5e5e5e; }
         #header-work { grid-column: 10 / 12; grid-row: 1; color: #b7b7b7; }
 
+
+        /* =========================================
+           === Visual Method Corner Labels ===
+           [1] [2] [3] are placed in columns 7, 8, 9
+           and lowered to about one third of the first row.
+           ========================================= */
+        .method-marker {
+            align-self: start;
+            justify-self: start;
+            margin-top: calc((100vh - (var(--page-margin) * 2)) / 18);
+
+            font-family: "AmericanTypewriter-Medium", "American Typewriter", "Courier New", serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 15pt;
+            line-height: 1;
+            white-space: nowrap;
+            text-decoration: none;
+
+            position: relative;
+            z-index: 60;
+            pointer-events: auto;
+        }
+
+        .method-marker:not(.current-method) {
+            cursor: pointer;
+        }
+
+        .method-marker:not(.current-method):hover {
+            color: #fff800 !important;
+        }
+
+        #method-1 {
+            grid-column: 7 / 8;
+            grid-row: 1;
+            color: #b7b7b7;
+        }
+
+        #method-2 {
+            grid-column: 8 / 9;
+            grid-row: 1;
+            color: #5e5e5e;
+        }
+
+        #method-3 {
+            grid-column: 9 / 10;
+            grid-row: 1;
+            color: #b7b7b7;
+        }
+
         /* =========================================
            === 四个蓝色模块：占用整个视口四边的布局空间 ===
            === 它们不是 overlay，而是真实挤压中间页面内容 ===
@@ -315,6 +365,7 @@
         body,
         #header-layer,
         .header-text,
+        .method-marker,
         #text-module-1,
         #text-module-1 p,
         #text-module-1 em,
@@ -339,7 +390,10 @@
     <section id="header-layer">
 <a class="header-text header-link" id="header-proj" href="https://antuyaran.github.io/homepage/">The Unquiet Page</a>
 <div class="header-text current" id="header-intro">Intro</div>
-<a class="header-text header-link" id="header-work" href="https://antuyaran.github.io/workprocess/">Working Process</a>
+<a class="header-text header-link" id="header-work" href="https://antuyaran.github.io/collection/">Collection</a>
+<a class="method-marker" id="method-1" href="https://antuyaran.github.io/Intro1/">[1]</a>
+<div class="method-marker current-method" id="method-2">[2]</div>
+<a class="method-marker" id="method-3" href="https://antuyaran.github.io/Intro3/">[3]</a>
 
     </section>
 
