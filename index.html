@@ -6,6 +6,38 @@
     <title>Intro</title>
     <style>
         /* =========================================
+           === Web Font Loading ===
+           This defines the two American Typewriter fonts for Raspberry Pi,
+           GitHub Pages, and any browser that does not already have them installed.
+           Keep the two font files in the same folder as this index.html:
+           - American Typewriter Medium.ttf
+           - AmericanTypewriter-LightItalic.otf
+           ========================================= */
+        @font-face {
+            font-family: "AT-Medium";
+            src:
+                local("American Typewriter Medium"),
+                local("AmericanTypewriter-Medium"),
+                local("American Typewriter"),
+                url("./American%20Typewriter%20Medium.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+            font-display: block;
+        }
+
+        @font-face {
+            font-family: "AT-LightItalic";
+            src:
+                local("AmericanTypewriter-LightItalic"),
+                local("American Typewriter Light Italic"),
+                local("American Typewriter LightItalic"),
+                url("./AmericanTypewriter-LightItalic.otf") format("opentype");
+            font-weight: 300;
+            font-style: italic;
+            font-display: block;
+        }
+
+        /* =========================================
            === 全局参数 (GLOBAL VARIABLES) ===
            ========================================= */
         :root {
@@ -115,7 +147,7 @@
             justify-self: start;
             margin-top: calc((100vh - (var(--page-margin) * 2)) / 18);
 
-            font-family: "AmericanTypewriter-Medium", "American Typewriter", "Courier New", serif;
+            font-family: "AT-Medium", "American Typewriter Medium", "AmericanTypewriter-Medium", "American Typewriter", "Courier New", serif;
             font-weight: 500;
             font-style: normal;
             font-size: 15pt;
@@ -370,7 +402,7 @@
         #text-module-1 p,
         #text-module-1 em,
         .anim-wrapper {
-            font-family: "AmericanTypewriter-Medium", "American Typewriter", "Courier New", serif !important;
+            font-family: "AT-Medium", "American Typewriter Medium", "AmericanTypewriter-Medium", "American Typewriter", "Courier New", serif !important;
             font-weight: 500 !important;
             font-style: normal !important;
         }
@@ -379,7 +411,7 @@
         #text-module-2 p,
         #text-module-2 em,
         .side-section {
-            font-family: "American Typewriter Light Italic", "AmericanTypewriter-LightItalic", "American Typewriter", "Courier New", serif !important;
+            font-family: "AT-LightItalic", "AmericanTypewriter-LightItalic", "American Typewriter Light Italic", "American Typewriter LightItalic", "American Typewriter", "Courier New", serif !important;
             font-weight: 300 !important;
             font-style: italic !important;
         }
